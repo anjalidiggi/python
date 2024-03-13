@@ -1,0 +1,346 @@
+1.	Introduction to Python:
+•	Python is a high-level, interpreted, and general-purpose programming language.
+•	It was created by Guido van Rossum and first released in 1991.
+•	Python emphasizes code readability and simplicity.
+2.	Installation:
+•	Download the latest version of Python from the official website (https://www.python.org/downloads/).
+•	Install an IDE like PyCharm for development.
+•	Use virtual environments for project isolation.
+3.	Comments & Pip:
+•	Comments: Comments in Python are essential for enhancing code readability, explaining the purpose of code blocks, and documenting your code for others (or your future self) to understand. Python supports both single-line and multi-line comments.
+•	Single-line comments: Single-line comments are preceded by the # symbol and extend to the end of the line. They're used for brief comments or explanations inline with the code.
+•	# This is a single-line comment print("Hello, World!") # This is also a single-line comment 
+•	Multi-line comments: Multi-line comments, also known as block comments, are enclosed within triple single quotes (''') or triple double quotes ("""). They're suitable for longer explanations or documentation.
+•	''' This is a multi-line comment. It spans multiple lines and is enclosed within triple quotes. Multi-line comments are useful for documenting functions or classes. ''' print("Hello, World!") 
+•	Comments are not executed by Python interpreter and are solely for human readers to understand the code better.
+•	Pip (Pip Installs Packages): Pip is the package installer for Python, allowing you to easily install and manage third-party libraries and packages. It simplifies the process of adding external functionality to your Python projects.
+•	Installing a package with pip: To install a package using pip, you can run pip install followed by the name of the package you want to install. For example, to install the popular library requests, which is used for making HTTP requests:
+Syntax:pip install requests 
+•	Listing installed packages: You can use pip list to view a list of all packages installed in your Python environment along with their versions.
+Syntax:pip list 
+•	Installing packages from requirements.txt: You can also install packages listed in a requirements.txt file using pip. This is a common practice for managing dependencies in Python projects.
+Syntax:pip install -r requirements.txt 
+•	Pip makes it easy to maintain a consistent environment across different machines and projects by managing package installations and dependencies.
+•	Combining comments and pip, you can write well-documented and maintainable Python code while efficiently managing external dependencies.
+
+4.	OOP Concepts:
+•	Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects".
+•	Key OOP concepts in Python include classes, objects, inheritance, encapsulation, and polymorphism.
+5.	Variables, Data Types, Keywords, Operators:
+•	Variables are used to store data.
+•	Data types include int, float, string, list, tuple, set, dictionary, etc.
+•	Keywords are reserved words in Python (e.g., if, else, for, while, etc.).
+•	Operators include arithmetic, assignment, comparison, logical, etc.
+6.	Data Structures:
+•	List: Ordered, mutable collection of elements.
+•	Tuple: Ordered, immutable collection of elements.
+•	Set: Unordered, mutable collection of unique elements
+•	Dictionary: Unordered, mutable collection of key-value pairs.
+7.	Loops:
+•	for loop: Iterates over a sequence like a list or tuple.
+•	while loop: Repeats a block of code as long as a specified condition is true.
+8.	Conditionals and Control Flow:
+•	if, elif, else statements: Used for decision-making.
+•	and, or, not operators: Used for logical operations.
+9.	Type Conversion:
+•	Conversion between different data types (e.g., int to float, string to int, etc.).
+10.	Flow Control:
+•	break, continue, pass statements: Used to control the flow of loops and decision-making statements.
+11.	Strings & Dates, Times, Time Deltas, and Time Zones:
+•	Strings: Strings are sequences of characters enclosed within either single quotes (' ') or double quotes (" "). They can include letters, numbers, symbols, and whitespace characters. In Python, strings are immutable, meaning they cannot be changed once created. 
+example: 
+# Example of strings
+string1 = "Hello, World!"
+string2 = 'Python Programming'
+
+# Accessing characters in a string
+print(string1[0])  # Output: H
+print(string2[-1])  # Output: g
+
+# String concatenation
+combined_string = string1 + " " + string2
+print(combined_string)  # Output: Hello, World! Python Programming
+•	Dates and Times: Python's datetime module provides classes for manipulating dates and times. This module includes classes like datetime, date, time, etc., which help in representing and working with date and time objects.
+Example:
+# Example of dates and times
+import datetime
+
+# Current date and time
+current_datetime = datetime.datetime.now()
+print("Current date and time:", current_datetime)
+
+# Formatting dates
+formatted_date = current_datetime.strftime("%Y-%m-%d")
+print("Formatted date:", formatted_date)
+
+# Creating custom date
+custom_date = datetime.date(2023, 7, 15)
+print("Custom date:", custom_date)
+•	Time Deltas: Time deltas represent the difference between two dates or times. They can be created using the timedelta class from the datetime module. 
+Example: # Example of time deltas
+delta = datetime.timedelta(days=7, hours=3)
+
+# Adding time delta to current date and time
+future_datetime = current_datetime + delta
+print("Future date and time:", future_datetime)
+
+# Subtracting time delta
+past_datetime = current_datetime - delta
+print("Past date and time:", past_datetime)
+•	Time Zones: Python's pytz module allows handling different time zones. It provides functionality to localize naive date and time objects.
+ Example:
+# Example of time zones
+import pytz
+
+# Localizing naive datetime object
+utc_datetime = datetime.datetime.utcnow()
+utc_aware = pytz.utc.localize(utc_datetime)
+print("UTC time:", utc_aware)
+
+# Converting time zones
+us_eastern = utc_aware.astimezone(pytz.timezone('US/Eastern'))
+print("US Eastern time:", us_eastern)
+
+
+12.	Functions (UDF), Lambda, Map, Reduce:
+•	User-Defined Functions (UDF): User-defined functions allow you to create custom functions to encapsulate reusable pieces of code. They help in organizing code into manageable blocks and promote reusability. Here's an example of defining and using a UDF:
+# Example of User-Defined Function (UDF) 
+def greet(name): 
+    return "Hello, " + name + "!"
+ # Calling the UDF 
+print(greet("Alice")) # Output: Hello, Alice! 
+print(greet("Bob")) # Output: Hello, Bob! 
+In this example, greet is a UDF that takes a name as an argument and returns a greeting message.
+
+•	Lambda Functions: Lambda functions, also known as anonymous functions, are functions defined without a name using the lambda keyword. They are typically used for short, simple operations and can be passed as arguments to other functions.
+Example:
+# Example of Lambda Function
+double = lambda x: x * 2
+
+# Using the Lambda Function
+print(double(5))  # Output: 10
+In this example, the lambda function doubles the input value.
+•	Map Function: The map() function applies a given function to each item of an iterable (e.g., list) and returns a list of the results. It's useful when you want to apply a function to all elements of an iterable without using a loop.
+Example:
+# Example of Map Function
+numbers = [1, 2, 3, 4, 5]
+
+# Mapping a function to the list
+squared = list(map(lambda x: x**2, numbers))
+
+# Output: [1, 4, 9, 16, 25]
+print(squared)
+In this example, the lambda function squares each element in the numbers list 
+Reduce Function: The reduce() function, which is part of the functools module, applies a rolling computation to sequential pairs of values in a list. It continually applies the function to the next element and the accumulated result. 
+Here's an example:
+using the map() function.
+# Example of Reduce Function
+from functools import reduce
+
+# Reducing a list to a single value
+product = reduce(lambda x, y: x * y, [1, 2, 3, 4])
+
+# Output: 24 (1*2*3*4)
+print(product)
+In this example, the reduce() function computes the product of all elements in the list.
+13.	Exception handling in Python:It allows you to gracefully manage errors and unexpected situations that may arise during program execution. Here's a detailed explanation with examples of try, except, and finally blocks:
+       #try, except, finally blocks:
+1-try: The try block is used to wrap the code that may potentially raise an exception. It allows you to test a block of code for errors.
+
+2-except: The except block is used to handle exceptions. If an exception occurs within the try block, Python looks for an appropriate except block to handle it. You can have multiple except blocks to handle different types of exceptions.
+
+3-finally: The finally block is optional and is used to execute code regardless of whether an exception occurred or not. It's typically used to release external resources or perform cleanup operations.
+
+Here's an example demonstrating the use of try, except, and finally blocks:
+
+# Example of Exception Handling
+1-try:
+    x = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("This will execute regardless of whether an exception occurred.")
+In this example:
+
+The code inside the try block attempts to perform a division by zero, which raises a ZeroDivisionError.
+The except block catches the ZeroDivisionError and prints a message.
+The finally block executes regardless of whether an exception occurred or not. It prints a message indicating its execution.
+You can also use multiple except blocks to handle different types of exceptions:
+
+# Example with Multiple Except Blocks
+try:
+    file = open("nonexistent_file.txt", "r")
+    contents = file.read()
+    file.close()
+except FileNotFoundError:
+    print("File not found!")
+except IOError:
+    print("Error reading the file!")
+finally:
+    print("Cleanup: Close the file if it was opened.")
+In this example:
+
+#The code inside the try block attempts to open and read a nonexistent file, which may raise FileNotFoundError or IOError.
+#The first except block catches FileNotFoundError and prints a message.
+#The second except block catches IOError and prints a message.
+#The finally block executes regardless of the type of exception and performs cleanup operations.
+#Exception handling allows you to handle errors gracefully and maintain the stability of your programs, especially when dealing with potentially risky operations.
+
+
+
+
+                 
+
+
+
+
+
+
+                          DATA STRUCTURES IN PYTHON
+1.	Lists:
+•	Lists are ordered collections of items.
+•	They are mutable, meaning their elements can be changed.
+•	Lists are created using square brackets [].
+                       Syntax: my_list = [1, 2, 3, 4, 5] 
+2.	Tuples:
+•	Tuples are ordered, immutable collections of items.
+•	They are created using parentheses ().
+                      Syntax:my_tuple = (1, 2, 3, 4, 5) 
+3.	Sets:
+•	Sets are unordered collections of unique items.
+•	They are mutable, but their elements are immutable.
+•	Sets are created using curly braces {}.
+                      Syntax:my_set = {1, 2, 3, 4, 5} 
+4.	Dictionaries:
+•	Dictionaries are unordered collections of key-value pairs.
+•	They are mutable and indexed by keys.
+•	Dictionaries are created using curly braces {} with key-value pairs separated by colons :.
+                     Syntax:my_dict = {"name": "John", "age": 30, "city": "New York"} 
+5.	Stacks:
+•	Stacks are abstract data types that follow the Last In, First Out (LIFO) principle.
+•	They can be implemented using lists in Python.
+                     Syntax:stack = [] 
+                                     stack.append("A") 
+                                     stack.append("B")
+                                     stack.pop() # Removes and returns "B" 
+
+6.	Queues:
+•	Queues are abstract data types that follow the First In, First Out (FIFO) principle.
+•	They can be implemented using lists or the queue module in Python.
+                      Syntax:from queue import Queue 
+                                     queue = Queue() 
+                                     queue.put("A")
+                                     queue.put("B") 
+                                     queue.get() # Removes and returns "A" 
+7.	Linked Lists:
+•	Linked lists are collections of nodes where each node contains a value and a reference to the next node in the sequence.
+•	They can be implemented using classes in Python.
+                      Syntax: class Node:
+                                            def __init__(self, value): 
+                                               self.value = value 
+                                               self.next = None 
+                                       class LinkedList: 
+                                              def __init__(self): 
+                                             self.head = None 
+8.	Trees:
+•	Trees are hierarchical data structures consisting of nodes connected by edges.
+•	They can be implemented using classes in Python.
+                      Syntax:class TreeNode: 
+                                          def __init__(self, value): 
+                                                 self.value = value
+                                                 self.left = None 
+                                             self.right = None 
+9.	Graphs:
+•	Graphs are collections of nodes (vertices) and edges that connect these nodes.
+•	They can be implemented using dictionaries or classes in Python.
+                     Syntax:
+                                     graph = { 
+                                              'A': ['B', 'C'], 
+                                              'B': ['A', 'D', 'E'],
+                                              'C': ['A', 'F'],
+                                              'D': ['B'],
+                                              'E': ['B', 'F'], 
+                                              'F': ['C', 'E']
+                                        } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Object-Oriented Programming Concepts in Python
+1.	Class: A class is a blueprint for creating objects. It defines the properties (attributes) and behaviors (methods) that all objects of the class will have.
+               Syntax:
+                            class Person: 
+                                   def __init__(self, name, age): 
+                                        self.name = name
+                                        self.age = age 
+                                   def greet(self): 
+                                        return f"Hello, my name is {self.name} and I am {self.age} years old." 
+2.	Object: An object is an instance of a class. It represents a specific instance of the class, with its own unique set of data and behavior.
+               Syntax:
+                    person1 = Person("Alice", 30)
+                    print(person1.greet()) 
+3.	Inheritance: Inheritance allows a new class (derived class or subclass) to inherit the properties and behaviors of an existing class (base class or superclass).
+               Syntax:
+                      class Student(Person): 
+                            def __init__(self, name, age, student_id):
+                                   super().__init__(name, age)
+                                  self.student_id = student_id 
+                           def study(self): 
+                                  return f"{self.name} is studying." 
+4.	Encapsulation: Encapsulation is the concept of restricting access to certain parts of an object to prevent direct modification. It is achieved in Python using private attributes and methods.
+               Syntax:
+                    class Account: 
+                          def __init__(self, balance): 
+                              self.__balance = balance 
+                          def get_balance(self): 
+                              return self.__balance 
+                          def deposit(self, amount): 
+                              self.__balance += amount
+                          def withdraw(self, amount): 
+                              if self.__balance >= amount:
+                                  self.__balance -= amount 
+                             else:
+                                  print("Insufficient balance.") 
+5.	Polymorphism: Polymorphism allows objects to be treated as instances of their superclass. It can be achieved through method overriding or method overloading.
+Syntax:
+                        class Animal: 
+                           def speak(self):
+                               pass 
+                        class Dog(Animal): 
+                            def speak(self):
+                                return "Woof!" 
+                       class Cat(Animal): 
+                           def speak(self): 
+                                return "Meow!" 
+                       def make_sound(animal): 
+                               return animal.speak() 
+                       dog = Dog() 
+                       cat = Cat() 
+                       print(make_sound(dog)) 
+                       print(make_sound(cat)) 
+6.	Abstraction: Abstraction is the concept of hiding the complex implementation details and showing only the necessary features of an object. It is achieved by defining abstract classes and methods that must be implemented by subclasses.
+              Syntax:
+                  from abc import ABC, abstractmethod 
+                      class Shape(ABC): 
+                          @abstractmethod 
+                           def area(self): 
+                                pass
+                      class Circle(Shape): 
+                            def __init__(self, radius): 
+                                    self.radius = radius 
+                           def area(self): 
+                                     return 3.14 * self.radius ** 2
+
+
+
+
